@@ -1,7 +1,7 @@
 package cscie97.asn1.knowledge.engine.domain;
 
 /**
- * A domain object that represents a triple of subject {@link Node}, predicate {@link Predicate} and object {@link Node}
+ * Immutable domain object that represents a triple of subject {@link Node}, predicate {@link Predicate} and object {@link Node}
  *
  * @author khaled
  */

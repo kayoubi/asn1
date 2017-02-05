@@ -1,7 +1,7 @@
 package cscie97.asn1.knowledge.engine.domain;
 
 /**
- * A domain object that represents the relation between Subject & Object in the {@link Triple}
+ * Immutable domain object that represents the relation between Subject & Object in the {@link Triple}
  *
  * @author khaled
  */
