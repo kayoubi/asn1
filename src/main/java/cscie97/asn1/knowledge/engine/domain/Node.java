@@ -18,7 +18,7 @@ public class Node {
         return identifier;
     }
 
-    long getCreateDate() {
+    public long getCreateDate() {
         return createDate;
     }
 
