@@ -7,6 +7,8 @@ import cscie97.asn1.knowledge.engine.repository.NodeRepository;
 import cscie97.asn1.knowledge.engine.repository.PredicateRepository;
 import cscie97.asn1.knowledge.engine.repository.TripleRepository;
 
+import java.util.Set;
+
 /**
  * A service class that provide an interface to the outside world to interact with our KnowledgeGraph system
  * (adding data for now), this shield the caller from the knowledge of our internal domain, and could provide
@@ -36,5 +38,9 @@ public class KnowledgeGraph {
         Node objectNode = NodeRepository.getInstance().save(object);
 
         TripleRepository.getInstance().save(subjectNode, predicateNode, objectNode);
+    }
+
+    public Set<Triple> query(String subject, String predicate, String object) {
+        return TripleRepository.getInstance().query(subject, predicate, object);
     }
 }

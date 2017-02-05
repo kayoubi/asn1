@@ -1,7 +1,7 @@
 package cscie97.asn1.test;
 
-import cscie97.asn1.knowledge.engine.Administrator;
-import cscie97.asn1.knowledge.engine.Agent;
+import cscie97.asn1.knowledge.engine.Importer;
+import cscie97.asn1.knowledge.engine.QueryEngine;
 
 import java.net.URL;
 
@@ -24,11 +24,11 @@ public class TestDriver {
             String dataFile = getFile(args[0]);
             String queryFile = getFile(args[1]);
 
-            Administrator administrator = new Administrator();
-            administrator.importFile(dataFile);
+            Importer importer = new Importer();
+            importer.importFile(dataFile);
 
-            Agent agent = new Agent();
-            agent.queryFile(queryFile);
+            QueryEngine queryEngine = new QueryEngine();
+            queryEngine.executeQueryFile(queryFile);
         } catch (IllegalArgumentException exception) {
             System.out.println(exception.getMessage());
         }

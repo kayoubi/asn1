@@ -15,6 +15,9 @@ import java.util.stream.IntStream;
  */
 public class FileProcessor {
 
+    private FileProcessor() {
+    }
+
     /**
      * If an error happend during the file reading, the processor will stop and the report the error to the console
      *
