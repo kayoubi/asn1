@@ -4,6 +4,7 @@ import cscie97.asn1.knowledge.engine.exceptions.InvalidLineException;
 import cscie97.asn1.knowledge.engine.service.KnowledgeGraph;
 import cscie97.asn1.knowledge.engine.util.FileProcessor;
 import cscie97.asn1.knowledge.engine.util.LineParser;
+import cscie97.asn1.knowledge.engine.util.Printer;
 
 /**
  * A user for our system that can load data from a file, parse its data and insert it to {@link KnowledgeGraph}
@@ -17,9 +18,7 @@ public class Importer {
      *        each line into the {@link KnowledgeGraph} it'll report any invalid line to the console
      */
     public void importFile(String fileName) {
-        System.out.println("========================");
-        System.out.println("== Parsing Input File ==");
-        System.out.println("========================\n");
+        Printer.printAction("Parsing Input File");
 
         KnowledgeGraph knowledgeGraph = KnowledgeGraph.getInstance();
         try  {
@@ -38,8 +37,6 @@ public class Importer {
                     "go too far! if this problem persists try to reduce the size of your input file or buy more RAM");
         }
 
-        System.out.println("=============================");
-        System.out.println("== Done Parsing Input File ==");
-        System.out.println("=============================\n");
+        Printer.printAction("Done Parsing Input File");
     }
 }

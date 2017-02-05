@@ -5,6 +5,7 @@ import cscie97.asn1.knowledge.engine.exceptions.InvalidLineException;
 import cscie97.asn1.knowledge.engine.service.KnowledgeGraph;
 import cscie97.asn1.knowledge.engine.util.FileProcessor;
 import cscie97.asn1.knowledge.engine.util.LineParser;
+import cscie97.asn1.knowledge.engine.util.Printer;
 
 import java.util.Set;
 
@@ -19,9 +20,7 @@ public class QueryEngine {
      *        each line to {@see executeQuery} as a query param, which will pint out the result, it'll report any invalid line to the console
      */
     public void executeQueryFile(String fileName) {
-        System.out.println("========================");
-        System.out.println("== Parsing Query File ==");
-        System.out.println("========================\n");
+        Printer.printAction("Parsing Query File");
 
         try  {
             FileProcessor.processFile(fileName, (idx, line) -> {
@@ -38,9 +37,7 @@ public class QueryEngine {
                     "if this problem persists try to reduce the size of your input file or buy more RAM");
         }
 
-        System.out.println("=============================");
-        System.out.println("== Done Parsing Query File ==");
-        System.out.println("=============================\n");
+        Printer.printAction("Done Parsing Query File");
     }
 
     /**
