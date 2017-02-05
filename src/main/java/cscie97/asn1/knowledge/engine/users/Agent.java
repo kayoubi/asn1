@@ -1,7 +1,7 @@
 package cscie97.asn1.knowledge.engine.users;
 
 import cscie97.asn1.knowledge.engine.domain.Triple;
-import cscie97.asn1.knowledge.engine.exceptions.ImportException;
+import cscie97.asn1.knowledge.engine.exceptions.InvalidLineException;
 import cscie97.asn1.knowledge.engine.service.QueryEngine;
 import cscie97.asn1.knowledge.engine.util.FileProcessor;
 import cscie97.asn1.knowledge.engine.util.LineParser;
@@ -14,6 +14,10 @@ import java.util.Set;
  * @author khaled
  */
 public class Agent {
+    /**
+     * @param fileName the name of the file to be processed, this method will try to load the file, parse it and send
+     *        each line to the {@link QueryEngine} as a query param, and print out the result, it'll report any invalid line to the console
+     */
     public void queryFile(String fileName) {
         QueryEngine queryEngine = new QueryEngine();
 
@@ -31,7 +35,7 @@ public class Agent {
                     }
                     System.out.println("");
 
-                } catch (ImportException e) {
+                } catch (InvalidLineException e) {
                     System.out.println("Error while parsing file: ".concat(fileName).concat(": (line: ")
                             .concat(Integer.toString(idx + 1)).concat(") \"").concat(line).concat("\" reason: ")
                             .concat(e.getMessage()).concat("\n"));

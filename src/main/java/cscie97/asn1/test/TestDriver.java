@@ -13,6 +13,8 @@ import java.net.URL;
  * @author khaled
  */
 public class TestDriver {
+    private final static String resourceLocation = "./../";
+
     public static void main(String[] args) {
         if (args.length != 2) {
             System.out.println("Missing arguments! usage: ".concat("java -cp . cscie97.asn1.test.TestDriver inputTriples.nts sampleQuery.nt"));
@@ -23,17 +25,17 @@ public class TestDriver {
 
         if (dataFile != null && queryFile != null) {
             Administrator administrator = new Administrator();
-            administrator.importFile(TestDriver.class.getResource("./" + args[0]).getFile());
+            administrator.importFile(TestDriver.class.getResource(resourceLocation.concat(args[0])).getFile());
 
             Agent agent = new Agent();
-            agent.queryFile(TestDriver.class.getResource("./" + args[1]).getFile());
+            agent.queryFile(TestDriver.class.getResource(resourceLocation.concat(args[1])).getFile());
         }
     }
 
     private static String getFile(String fileName) {
-        URL data = TestDriver.class.getResource("./" + fileName);
+        URL data = TestDriver.class.getResource(resourceLocation.concat(fileName));
         if (data == null) {
-            System.out.println("can't find file: ".concat(fileName).concat(" make sure it exists under: ").concat(TestDriver.class.getResource(".").getFile()));
+            System.out.println("can't find file: ".concat(fileName).concat(" make sure it exists under: ").concat(TestDriver.class.getResource(resourceLocation).getFile()));
             return null;
         }
         return data.getFile();

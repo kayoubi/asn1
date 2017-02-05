@@ -1,6 +1,6 @@
 package cscie97.asn1.knowledge.engine.users;
 
-import cscie97.asn1.knowledge.engine.exceptions.ImportException;
+import cscie97.asn1.knowledge.engine.exceptions.InvalidLineException;
 import cscie97.asn1.knowledge.engine.service.KnowledgeGraph;
 import cscie97.asn1.knowledge.engine.util.FileProcessor;
 import cscie97.asn1.knowledge.engine.util.LineParser;
@@ -23,7 +23,7 @@ public class Administrator {
                 try {
                     String[] input = LineParser.parse(line, LineParser.TYPE.INPUT);
                     knowledgeGraph.importTriple(input[0], input[1], input[2]);
-                } catch (ImportException e) {
+                } catch (InvalidLineException e) {
                     System.out.println("Error while parsing file: ".concat(fileName).concat(": (line: ")
                             .concat(Integer.toString(idx + 1)).concat(") \"").concat(line).concat("\" reason: ").concat(e.getMessage()));
                 }
