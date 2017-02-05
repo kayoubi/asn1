@@ -13,6 +13,7 @@ import java.util.Set;
  */
 public class QueryEngine {
     /**
+     * No validation, we are assuming the input is valid already (during parsing phase)
      *
      * @param query the query string
      * @return matching Set {@link Triple}

@@ -1,4 +1,4 @@
-package cscie97.asn1.knowledge.engine.users;
+package cscie97.asn1.knowledge.engine;
 
 import cscie97.asn1.knowledge.engine.domain.Triple;
 import cscie97.asn1.knowledge.engine.exceptions.InvalidLineException;
@@ -19,6 +19,9 @@ public class Agent {
      *        each line to the {@link QueryEngine} as a query param, and print out the result, it'll report any invalid line to the console
      */
     public void queryFile(String fileName) {
+        System.out.println("========================");
+        System.out.println("== Parsing Query File ==");
+        System.out.println("========================\n");
         QueryEngine queryEngine = new QueryEngine();
 
         try  {
@@ -41,7 +44,9 @@ public class Agent {
                             .concat(e.getMessage()).concat("\n"));
                 }
             });
-
+            System.out.println("=============================");
+            System.out.println("== Done Parsing Query File ==");
+            System.out.println("=============================\n");
         } catch (OutOfMemoryError outOfMemoryError) {
             System.out.println("Running out of memory, will stop processing now!! " +
                     "if this problem persists try to reduce the size of your input file or buy more RAM");
