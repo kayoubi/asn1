@@ -1,0 +1,149 @@
+==========================
+=== Parsing Input File ===
+==========================
+
+Error while parsing file: /Users/khaled/dev/cscie97/asn1/src/main/java/cscie97/asn1/extra-input.nt: (line: 16) "Sam friends_with." reason: line has to have three tokens
+
+Error while parsing file: /Users/khaled/dev/cscie97/asn1/src/main/java/cscie97/asn1/extra-input.nt: (line: 31) "Camila friend_with Tamara" reason: line should end with a '.'
+
+Error while parsing file: /Users/khaled/dev/cscie97/asn1/src/main/java/cscie97/asn1/extra-input.nt: (line: 73) "" reason: line has to have three tokens
+
+Error while parsing file: /Users/khaled/dev/cscie97/asn1/src/main/java/cscie97/asn1/extra-input.nt: (line: 91) "" reason: line has to have three tokens
+
+Error while parsing file: /Users/khaled/dev/cscie97/asn1/src/main/java/cscie97/asn1/extra-input.nt: (line: 113) "streams Blue." reason: line has to have three tokens
+
+Error while parsing file: /Users/khaled/dev/cscie97/asn1/src/main/java/cscie97/asn1/extra-input.nt: (line: 134) "iTunes available_in  US." reason: line has to have three tokens
+
+===============================
+=== Done Parsing Input File ===
+===============================
+
+==========================
+=== Parsing Query File ===
+==========================
+
+Pandora ? ?.
+Pandora available_in Germany.
+Pandora available_in Congo.
+Pandora available_in Eritrea.
+Pandora streams Classic.
+Pandora available_in Malawi.
+Pandora available_in Colombia.
+Pandora available_in India.
+Pandora available_in Mauritania.
+Pandora available_in Trinidad.
+Pandora available_in Syria.
+Pandora streams Chillout.
+Pandora streams Indie.
+Pandora available_in Gambia.
+Pandora available_in Nauru.
+Pandora available_in Chile.
+Pandora streams Country.
+Pandora available_in Guatemala.
+
+Error while parsing file: /Users/khaled/dev/cscie97/asn1/src/main/java/cscie97/asn1/extra-query.nt: (line: 2) "Pandora ? ?" reason: line should end with a '.'
+
+Error while parsing file: /Users/khaled/dev/cscie97/asn1/src/main/java/cscie97/asn1/extra-query.nt: (line: 3) "Pandora ?." reason: line has to have three tokens
+
+Pandora ? Germany.
+Pandora available_in Germany.
+
+? ? Germany.
+Pandora available_in Germany.
+Cannon studied_in Germany.
+Aaron born_in Germany.
+Andy born_in Germany.
+Google available_in Germany.
+Rdio available_in Germany.
+iTunes available_in Germany.
+Candis born_in Germany.
+Heide born_in Germany.
+Yareli studied_in Germany.
+Dominga studied_in Germany.
+Celia born_in Germany.
+
+Eli ? ?.
+Eli friend_with Grayson.
+Eli studied_in Nauru.
+Eli friend_with Myrtice.
+Eli born_in Palau.
+Eli listen_to Pop.
+Eli listen_to Folk.
+
+Error while parsing file: /Users/khaled/dev/cscie97/asn1/src/main/java/cscie97/asn1/extra-query.nt: (line: 7) "" reason: line has to have three tokens
+
+Phoenix friend_with Damon.
+Phoenix friend_with Damon.
+
+Phoenix plays ?.
+<null>
+
+? ? Alexzander.
+Camila friend_with Alexzander.
+
+? listen_to Pop.
+Evie listen_to Pop.
+Karla listen_to Pop.
+Erin listen_to Pop.
+Terry listen_to Pop.
+Eli listen_to Pop.
+
+? ? Pop.
+Evie listen_to Pop.
+Karla listen_to Pop.
+Erin listen_to Pop.
+Google streams Pop.
+Spotify streams Pop.
+Terry listen_to Pop.
+Eli listen_to Pop.
+
+? ? iTunes.
+Aaron subscribes_to iTunes.
+Evie subscribes_to iTunes.
+Caitlyn subscribes_to iTunes.
+Hanna subscribes_to iTunes.
+Candis subscribes_to iTunes.
+
+Google ? ?.
+Google available_in Palau.
+Google available_in Syria.
+Google available_in Chile.
+Google available_in India.
+Google available_in Bahamas.
+Google available_in Turkmenistan.
+Google streams Jazz.
+Google available_in Gambia.
+Google streams Classic.
+Google available_in Senegal.
+Google available_in Mauritania.
+Google available_in Vanuatu.
+Google available_in Germany.
+Google streams Pop.
+Google available_in Kiribati.
+Google streams Rock.
+Google available_in Malawi.
+
+? born_in Turkmenistan.
+Payton born_in Turkmenistan.
+
+Aaron ? ?.
+Aaron listen_to Jazz.
+Aaron subscribes_to iTunes.
+Aaron born_in Germany.
+Aaron studied_in Trinidad.
+Aaron friend_with Perry.
+Aaron listen_to Classic.
+
+Andy studied_in ?.
+Andy studied_in Chile.
+
+Nikki listen_to ?.
+<null>
+
+Error while parsing file: /Users/khaled/dev/cscie97/asn1/src/main/java/cscie97/asn1/extra-query.nt: (line: 19) "? ?." reason: line has to have three tokens
+
+Can't query the whole DB! (line 19)
+
+===============================
+=== Done Parsing Query File ===
+===============================

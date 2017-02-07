@@ -9,6 +9,8 @@ import java.net.URL;
  * The executor of the system, it has only one method that accept at least 2  params, the first is the name of the file
  * to load to the system, and the second is the query file, it makes sure that the files exist in the root directory, and complains otherwise
  *
+ * The requirements mentioned file name validation, but didn't say what's a valid name, I'm assuming that it has to be a ".nt" file for the sake of it
+ *
  * @author khaled
  */
 public class TestDriver {
@@ -17,6 +19,10 @@ public class TestDriver {
     public static void main(String[] args) {
         if (args.length != 2) {
             System.out.println("Missing arguments! usage: ".concat("java -cp . cscie97.asn1.test.TestDriver {input-file} {query-file}"));
+            return;
+        }
+        if (!args[0].endsWith(".nt") || !args[1].endsWith(".nt")) {
+            System.out.println("Invalid input files: accepted files are `\".nt\" only");
             return;
         }
 
