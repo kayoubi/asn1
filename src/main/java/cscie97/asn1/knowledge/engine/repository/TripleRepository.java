@@ -15,6 +15,7 @@ public class TripleRepository {
     private static final TripleRepository instance = new TripleRepository();
 
     private final Map<String, Set<Triple>> queryMapSet = new HashMap<>();
+    private final Map<String, Triple> triplesMap = new HashMap<>();
 
     private TripleRepository() {
     }
@@ -49,11 +50,15 @@ public class TripleRepository {
      *
      */
     public void save(Node subject, Predicate predicate, Node object) {
-        if (getTriple(subject, predicate, object) == null) {
+        String id = buildKey(subject.getIdentifier(), predicate.getIdentifier(), object.getIdentifier());
+        if (triplesMap.containsKey(id)) {
+            triplesMap.get(id).refresh();
+        } else {
             String[] keys = buildKeys(subject.getIdentifier(), predicate.getIdentifier(), object.getIdentifier());
             Triple triple = new Triple(subject, predicate, object);
 
             Arrays.stream(keys).forEach(key -> queryMapSet.computeIfAbsent(key, t -> new HashSet<>()).add(triple));
+            triplesMap.put(id, triple);
         }
     }
 

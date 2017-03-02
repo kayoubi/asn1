@@ -10,16 +10,22 @@ public class Triple {
     private final Predicate predicate;
     private final Node object;
     private final long createDate;
+    private long lastUpdatedDate;
 
     public Triple(Node subject, Predicate predicate, Node object) {
         this.subject = subject;
         this.predicate = predicate;
         this.object = object;
         this.createDate = System.currentTimeMillis();
+        this.lastUpdatedDate = createDate;
     }
 
     public long getCreateDate() {
         return createDate;
+    }
+
+    public long getLastUpdatedDate() {
+        return lastUpdatedDate;
     }
 
     public Node getSubject() {
@@ -62,5 +68,9 @@ public class Triple {
                 .concat(" ")
                 .concat(object.getIdentifier())
                 .concat(".");
+    }
+
+    public void refresh() {
+        this.lastUpdatedDate = System.currentTimeMillis();
     }
 }
