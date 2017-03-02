@@ -22,6 +22,18 @@ public class Triple {
         return createDate;
     }
 
+    public Node getSubject() {
+        return subject;
+    }
+
+    public Predicate getPredicate() {
+        return predicate;
+    }
+
+    public Node getObject() {
+        return object;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

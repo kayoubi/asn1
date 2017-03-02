@@ -49,21 +49,22 @@ public class LineParser {
      */
     public static void validate(String line, TYPE type) throws InvalidLineException {
 
-        String [] result = line.split(" ");
-        if (result.length != 3) {
+        String [] tokens = line.split(" ");
+        if (tokens.length != 3) {
             throw new InvalidLineException("line has to have three tokens");
         }
 
-        Arrays.stream(result).filter(s -> s.length() == 0).findAny().ifPresent(s -> {
+        Arrays.stream(tokens).filter(s -> s.length() == 0).findAny().ifPresent(s -> {
             throw new InvalidLineException("Can't have empty node");
         });
 
-        if (result[2].charAt(result[2].length() - 1) != '.') {
+        if (tokens[2].charAt(tokens[2].length() - 1) != '.') {
             throw new InvalidLineException("line should end with a '.'");
         }
 
         if (TYPE.INPUT.equals(type)) {
-            Arrays.stream(result).filter(s -> s.equals("?")).findAny().ifPresent(s -> {
+            tokens[2] = tokens[2].substring(0, tokens[2].length() - 1);
+            Arrays.stream(tokens).filter(s -> s.equals("?")).findAny().ifPresent(s -> {
                 throw new InvalidLineException("? is reserved keyword");
             });
         }
